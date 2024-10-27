@@ -99,5 +99,5 @@ Includes 3 jupyter notebooks of baseline model, second model, and third model
 ### Images
 Stores images of all visualizations that were created.
 
-### EARLY READMISSION OF DIABETES PATIENTS.pdf
+### Presentation.pdf
 A pdf version of the presentation slides.
