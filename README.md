@@ -4,7 +4,8 @@
 #### Author : [Sabrina Sayed](https://github.com/sabrinasayed99)
 
 ## Overview:
-Diabetes is one of the most dangerous diseases across the world. I have grown up seeing my family members struggling to manage their diabetes and have lived long enough to lose multiple relatives to the disease. [In the United States, diabetes is growing amongst young people, leaving the most vulnerable communities in danger. Researchers have forecasted if the rate of new diagnoses continues to increase, Type 1 diabetes cases would increase about 65% and Type 2 diabetes cases would increase about 700%] (https://www.cdc.gov/diabetes/data-research/research/young-people-diabetes-on-rise.html). 
+Diabetes is one of the most dangerous diseases across the world. I have grown up seeing my family members struggling to manage their diabetes and have lived long enough to lose multiple relatives to the disease. In the United States, diabetes is growing amongst young people, leaving the most vulnerable communities in danger. Researchers have forecasted if the rate of new diagnoses continues to increase, Type 1 diabetes cases would increase about 65% and Type 2 diabetes cases would increase about 700%.
+https://www.cdc.gov/diabetes/data-research/research/young-people-diabetes-on-rise.html
      
 I was curious to explore how our healthcare system and hospitals are managing the disease. [Studies have reported diabetes increases the risk of a 30 day readmission by at least 17% and up to 2.5 fold. The increased risk of readmission is most pronounced when diabetes is the primary reason for hospitalization](https://onlinelibrary.wiley.com/doi/10.1155/2014/781670). It is widely recognized that the management of hyperglycemia (high blood sugar) in hospitalized patients has a significant bearing on morbidity and mortality; however, for non-ICU inpatients in particular, evidence shows hyperglycemia management is often arbitrary and leads to either no treatment at all or wide fluctuations in glucose, due to the lack of formalized protocols in non-ICU environments.
 
@@ -54,9 +55,9 @@ I built a baseline Decision Tree Classifier model, a Logistic Regression model, 
 
 ## Results: 
 The third model I built, a Decision Tree Classifier, proved to be the best predictor of early readmission patients with a recall score of 91% and precision of 9%. 
-    ![Model_3_Classifier_Tree_SMOTE](https://github.com/user-attachments/assets/d844bf60-57d2-4f5b-8331-f469f899d251)
+![Model_3_Classifier_Tree_SMOTE](https://github.com/user-attachments/assets/d844bf60-57d2-4f5b-8331-f469f899d251)
 
-    ![Model_3_Confusion_Matrix_SMOTE](https://github.com/user-attachments/assets/2efe9371-eb4f-4850-9d99-830e16b06798)
+![Model_3_Confusion_Matrix_SMOTE](https://github.com/user-attachments/assets/2efe9371-eb4f-4850-9d99-830e16b06798)
 
 Through data exploration, there was a great deal of missing data for Hemoglobin A1C and glucose levels. These are 2 of the most important  indicators of the efficacy of diabetes treatment. There was a strong correlation between patients who did not get these measurements taken and those who were readmitted to the hospital within 30 days of discharge.  
     
@@ -65,8 +66,35 @@ Through data exploration, there was a great deal of missing data for Hemoglobin 
 ![HbA1c_Result_Distribution](https://github.com/user-attachments/assets/004f7fae-84ae-4772-a8ca-00db28992390)
 
 
-    For our intents and purposes we are prioritizing recall score over the precision score because the cost of missing a patient at risk of early readmission is much higher than one that that is not. The average readmission rate for a hospital is 15% and the cost of each readmission is about $15,000. Implementing this model would mean we could prevent 91% of those readmissions and save a total of $17 million per year, assuming the hospital admits 10,000 patients per year.
+For our intents and purposes we are prioritizing recall score over the precision score because the cost of missing a patient at risk of early readmission is much higher than one that that is not. The average readmission rate for a hospital is 15% and the cost of each readmission is about $15,000. Implementing this model would mean we could prevent 91% of those readmissions and save a total of $17 million per year, assuming the hospital admits 10,000 patients per year.
 
-    
-	
-    
+## Recommendations:
+Improve quality of care for diabetes patients by establishing a formalized protocol for hyperglycemia management in  non-ICU floors. It is clear that measuring Hemoglobin A1C and Glucose in diabetes patients
+is a strong predictor of readmission. These measurements are strong indicators of treatment efficacy and the state of the patient.
+
+## Next Steps:
+Collect more recent data from more hospitals
+Collect more representative data inclusive of minority populations 
+Continue research into predictors of readmission for non-diabetes patients
+
+
+## Directory:
+[Presentation](file:///Users/sabrinasayed/Downloads/EARLY%20READMISSION%20OF%20DIABETES%20PATIENTS.pdf)
+[Dataset](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008)
+
+## Repository Files:
+
+### Cleaned Data 
+Cleaned Data folder contains the cleaned dataframe that was used for exploratory data analysis and modeling
+
+### Data
+Contains the raw data files, databases, and alternative dataframes built from filtering features
+
+### EDA
+Includes jupyter notebook of data exploration, data cleaning, alternative databases, SQL queries, statistical analyses, and graphical visualizations of feature relationships.
+
+### Images
+Stores images of all visualizations that were created.
+
+### EARLY READMISSION OF DIABETES PATIENTS.pd
+A pdf version of the presentation slides.
