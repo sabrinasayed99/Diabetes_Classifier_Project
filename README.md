@@ -56,8 +56,8 @@ I built a baseline Decision Tree Classifier model, a Logistic Regression model, 
 ## Results: 
 The third model I built, a Decision Tree Classifier, proved to be the best predictor of early readmission patients with a recall score of 91% and precision of 9%. 
 ![Model_3_Classifier_Tree_SMOTE](https://github.com/user-attachments/assets/d844bf60-57d2-4f5b-8331-f469f899d251)
+![Model_3_CFMAT_SMOTE](https://github.com/user-attachments/assets/447c4c5f-b144-40ad-a7c6-290eda2beb2c)
 
-![Model_3_Confusion_Matrix_SMOTE](https://github.com/user-attachments/assets/2efe9371-eb4f-4850-9d99-830e16b06798)
 
 Through data exploration, there was a great deal of missing data for Hemoglobin A1C and glucose levels. These are 2 of the most important  indicators of the efficacy of diabetes treatment. There was a strong correlation between patients who did not get these measurements taken and those who were readmitted to the hospital within 30 days of discharge.  
     
