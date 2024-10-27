@@ -47,8 +47,8 @@ The Diabetes Dataset From 130 U.S. Hospitals (1999-2008) provides data on diabet
 - Readmitted Days to inpatient readmission
   
 ## Tech Stack:
-Languages: Python
-Libraries: scikit-learn, sci-py, pandas, numpy, matplotlib, seaborn, SQL.
+- Languages: Python
+- Libraries: scikit-learn, sci-py, pandas, numpy, matplotlib, seaborn, SQL.
 
 ## Methods:
 I built a baseline Decision Tree Classifier model, a Logistic Regression model, and a second Decision Tree Classifier. I utilized various encoding and scaling techniques including OneHotEncoder, StandardScaler, and LabelEncoder. I used hyperparameter tuning techniques like Synthetic Minority Oversampling to address the class imbalance in the dataset. I prioritized recall as my main metric upon evaluation. 
