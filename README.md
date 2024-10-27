@@ -93,6 +93,9 @@ Contains the raw data files, databases, and alternative dataframes built from fi
 ### EDA
 Includes jupyter notebook of data exploration, data cleaning, alternative databases, SQL queries, statistical analyses, and graphical visualizations of feature relationships.
 
+### Modeling Notebooks
+Includes 3 jupyter notebooks of baseline model, second model, and third model
+
 ### Images
 Stores images of all visualizations that were created.
 
