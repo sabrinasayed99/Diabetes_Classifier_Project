@@ -79,7 +79,7 @@ Continue research into predictors of readmission for non-diabetes patients
 
 
 ## Directory:
-[Presentation](file:///Users/sabrinasayed/Downloads/EARLY%20READMISSION%20OF%20DIABETES%20PATIENTS.pdf)
+[Presentation](https://www.canva.com/design/DAGUfEYQW2M/THiUW0l3gtzn59nGwtkmbw/edit?utm_content=DAGUfEYQW2M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 [Dataset](https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008)
 
 ## Repository Files:
