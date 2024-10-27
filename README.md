@@ -96,5 +96,5 @@ Includes jupyter notebook of data exploration, data cleaning, alternative databa
 ### Images
 Stores images of all visualizations that were created.
 
-### EARLY READMISSION OF DIABETES PATIENTS.pd
+### EARLY READMISSION OF DIABETES PATIENTS.pdf
 A pdf version of the presentation slides.
