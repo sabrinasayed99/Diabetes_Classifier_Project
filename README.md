@@ -7,15 +7,17 @@
 Diabetes is one of the most dangerous diseases across the world. I have grown up seeing my family members struggling to manage their diabetes and have lived long enough to lose multiple relatives to the disease. In the United States, diabetes is growing amongst young people, leaving the most vulnerable communities in danger. Researchers have forecasted if the rate of new diagnoses continues to increase, Type 1 diabetes cases would increase about 65% and Type 2 diabetes cases would increase about 700%.
 https://www.cdc.gov/diabetes/data-research/research/young-people-diabetes-on-rise.html
      
-I was curious to explore how our healthcare system and hospitals are managing the disease. [Studies have reported diabetes increases the risk of a 30 day readmission by at least 17% and up to 2.5 fold. The increased risk of readmission is most pronounced when diabetes is the primary reason for hospitalization](https://onlinelibrary.wiley.com/doi/10.1155/2014/781670). It is widely recognized that the management of hyperglycemia (high blood sugar) in hospitalized patients has a significant bearing on morbidity and mortality; however, for non-ICU inpatients in particular, evidence shows hyperglycemia management is often arbitrary and leads to either no treatment at all or wide fluctuations in glucose, due to the lack of formalized protocols in non-ICU environments.
+I was curious to explore how our healthcare system and hospitals are managing the disease. Unexpected readmission is one of the biggest and more expensive problems facing hospital. [Studies have reported diabetes increases the risk of an early readmission (within 30 days of disharge) by at least 17% and up to 2.5 fold. The increased risk of readmission is most pronounced when diabetes is the primary reason for hospitalization](https://onlinelibrary.wiley.com/doi/10.1155/2014/781670). It is widely recognized that the management of hyperglycemia (high blood sugar) in hospitalized patients has a significant bearing on morbidity and mortality; however, for non-ICU inpatients in particular, evidence shows hyperglycemia management is often arbitrary and leads to either no treatment at all or wide fluctuations in glucose, due to the lack of formalized protocols in non-ICU environments.
 
 ## The Problem:
-This project utilizes the U.C. Irvine 'Diabetes Dataset From 130 U.S. Hospitals (1999-2008)' to predict the early admission of patients, less than 30 days after discharge. Readmission can be a strong indicator of quality of care. When unplanned readmission is high, it can indicate low quality of care, lack of treatment, or disorganization.
+This project utilizes the U.C. Irvine 'Diabetes Dataset From 130 U.S. Hospitals (1999-2008)' to predict the early admission of patients, less than 30 days after discharge. When unplanned readmission is high, it can indicate low quality of care, lack of treatment, or disorganization. The stakeholder for this project is the Mount Sinai Health Care System. I will be building a classifier model to predict the early readmission of diabetes patients for Mount Sinai's Diabetes Center.
 
 According to the NIH, the annual cost of readmissions within 30 days of discharge is $20-25 billion, based on the most inclusive readmission rates of 16-20% among diabetes patients in the United States. Readmissions can also cause unnecessary emotional, physical, and social burdens for patients. To efficiently implement interventions intended to reduce readmission risk and the associated costs, it is critical to understand the causes of readmissions as well as to identify patients at higher risk. 
 
 ## Data:
 The Diabetes Dataset From 130 U.S. Hospitals (1999-2008) provides data on diabetes patients' hospitalization. Sensitive data like the patient's race, gender, and age was included in the categorical data along with diagnoses, reason for admission, prescriptions, lab results, insurance code, and discharge disposition. Numerical data includes the time spent in the hospital, number of medications received during the visit and number of procedures. There is heavy class imbalance with patients readmitted within 30 days being the minority class. 
+
+Some limitations of the data include class imbalance, outdated data, and non-representative data. After grouping the data into 2 classes, patients readmitted within 30 days of discharge and those who were not, there was 9 times more patients in the second class than the first class. That made it more difficult for the model to recognize a readmitted patient. Outdated data from only 130 hospitals that spans 10 years and ended in 2008 does not give us a full story of what is happening today in U.S. hospitals. Features can change over the years, protocols and procedures can improve, and there is a lot this data is failing to capture. Lastly, there was a higher representation of Caucasion and African American patients than other minorities, which limits the model's ability to distinguish between various races.
 
 
 ## Features:
@@ -54,12 +56,12 @@ The Diabetes Dataset From 130 U.S. Hospitals (1999-2008) provides data on diabet
 I built a baseline Decision Tree Classifier model, a Logistic Regression model, and a second Decision Tree Classifier. I utilized various encoding and scaling techniques including OneHotEncoder, StandardScaler, and LabelEncoder. I used hyperparameter tuning techniques like Synthetic Minority Oversampling to address the class imbalance in the dataset. I prioritized recall as my main metric upon evaluation. 
 
 ## Results: 
-The third model I built, a Decision Tree Classifier, proved to be the best predictor of early readmission patients with a recall score of 91% and precision of 9%. 
+The third model I built, a Decision Tree Classifier, proved to be the best predictor of early readmission patients with a recall score of 91% and precision of 9%.
 ![Model_3_Classifier_Tree_SMOTE](https://github.com/user-attachments/assets/d844bf60-57d2-4f5b-8331-f469f899d251)
 ![Model_3_CFMAT_SMOTE](https://github.com/user-attachments/assets/447c4c5f-b144-40ad-a7c6-290eda2beb2c)
 
 
-Through data exploration, there was a great deal of missing data for Hemoglobin A1C and glucose levels. These are 2 of the most important  indicators of the efficacy of diabetes treatment. There was a strong correlation between patients who did not get these measurements taken and those who were readmitted to the hospital within 30 days of discharge.  
+Through data exploration, there was a great deal of missing data for Hemoglobin A1C and glucose levels. These are 2 of the most important indicators of the efficacy of diabetes treatment. There also proved to be a strong correlation between patients who did not get these measurements taken and those who were readmitted to the hospital within 30 days of discharge.  
     
 ![Glucose_Measured_Significance](https://github.com/user-attachments/assets/4410f0d7-372e-4d83-85f1-85f246500eac)
 ![Glucose_Results_Distribution](https://github.com/user-attachments/assets/99858934-4da3-449b-8320-2869364009f6)
@@ -68,14 +70,15 @@ Through data exploration, there was a great deal of missing data for Hemoglobin 
 
 For our intents and purposes we are prioritizing recall score over the precision score because the cost of missing a patient at risk of early readmission is much higher than one that that is not. The average readmission rate for a hospital is 15% and the cost of each readmission is about $15,000. Implementing this model would mean we could prevent 91% of those readmissions and save a total of $17 million per year, assuming the hospital admits 10,000 patients per year.
 
+
 ## Recommendations:
 Improve quality of care for diabetes patients by establishing a formalized protocol for hyperglycemia management in  non-ICU floors. It is clear that measuring Hemoglobin A1C and Glucose in diabetes patients
 is a strong predictor of readmission. These measurements are strong indicators of treatment efficacy and the state of the patient.
 
 ## Next Steps:
-Collect more recent data from more hospitals
+Collect more recent data from more hospitals: get access to Mount Sinai health records to conduct a pointed study of treatment efficacy and readmissions
 Collect more representative data inclusive of minority populations 
-Continue research into predictors of readmission for non-diabetes patients
+Continue research into predictors of readmission for both diabtes and non-diabetes patients
 
 
 ## Directory:
